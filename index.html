@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wind Developers - Documentation Portal</title>
+    <title>Wind Developers - Wmail Documentation Portal</title>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -11,7 +11,6 @@
         :root {
             --bg-main: #0a0a0f;
             --bg-card: #12121a;
-            --sidebar-bg: #0e0e14;
             --accent-green: #00ffcc;
             --accent-blue: #0067b8;
             --text-main: #f1f1f7;
@@ -31,31 +30,29 @@
             background-color: var(--bg-main);
             color: var(--text-main);
             line-height: 1.6;
-            display: flex;
-            min-height: 100vh;
+            padding: 40px 20px;
         }
 
-        /* 🧭 SIDEBAR MENÜ KATMANI */
-        .sidebar {
-            width: 260px;
-            background-color: var(--sidebar-bg);
-            border-right: 1px solid var(--border-color);
-            padding: 30px 20px;
-            display: flex;
-            flex-direction: column;
-            position: fixed;
-            height: 100vh;
-            left: 0;
-            top: 0;
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Header Section */
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .logo-area {
             font-family: 'Fira Code', monospace;
             font-weight: 700;
-            font-size: 20px;
+            font-size: 24px;
             color: var(--text-main);
-            margin-bottom: 40px;
-            display: flex;
+            margin-bottom: 10px;
+            display: inline-flex;
             align-items: center;
             gap: 10px;
         }
@@ -65,86 +62,24 @@
             text-shadow: var(--neon-shadow);
         }
 
-        .menu-title {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--text-muted);
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .nav-menu {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .nav-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            background: none;
-            border: 1px solid transparent;
-            color: var(--text-muted);
-            padding: 12px 16px;
-            border-radius: 6px;
-            cursor: pointer;
-            text-align: left;
-            font-size: 14px;
-            font-weight: 500;
-            transition: all 0.2s ease;
-        }
-
-        .nav-item:hover {
-            color: var(--text-main);
-            background: rgba(255, 255, 255, 0.02);
-        }
-
-        .nav-item.active {
-            color: var(--accent-green);
-            background: rgba(0, 255, 204, 0.04);
-            border-color: rgba(0, 255, 204, 0.15);
-            box-shadow: inset 0 0 10px rgba(0, 255, 204, 0.02);
-        }
-
-        /* 🖥️ ANA İÇERİK ALANI */
-        .main-content {
-            margin-left: 260px;
-            flex: 1;
-            padding: 60px 40px;
-            max-width: 1000px;
-        }
-
-        .doc-category {
-            display: none;
-        }
-
-        .doc-category.active {
-            display: block;
-        }
-
-        header {
-            margin-bottom: 40px;
-            padding-bottom: 25px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
         header h1 {
-            font-size: 30px;
+            font-size: 32px;
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             letter-spacing: -0.5px;
         }
 
         header p {
             color: var(--text-muted);
-            font-size: 15px;
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        /* CTA ZONE & NOTICES */
+        /* Call to Action Button Zone */
         .cta-zone {
-            margin: 30px 0;
+            text-align: center;
+            margin: 40px 0;
         }
 
         .btn-get-key {
@@ -154,14 +89,13 @@
             background: linear-gradient(135deg, var(--accent-blue), #004b87);
             color: #fff;
             text-decoration: none;
-            padding: 14px 28px;
+            padding: 16px 32px;
             font-weight: 600;
-            border-radius: 6px;
-            font-size: 15px;
+            border-radius: 8px;
+            font-size: 16px;
             border: 1px solid rgba(0, 255, 204, 0.3);
             box-shadow: var(--neon-shadow);
             transition: all 0.3s ease;
-            cursor: pointer;
         }
 
         .btn-get-key:hover {
@@ -170,23 +104,10 @@
             box-shadow: 0 0 25px rgba(0, 255, 204, 0.4);
         }
 
-        .limit-notice {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background: rgba(255, 165, 0, 0.05);
-            border: 1px dashed rgba(255, 165, 0, 0.2);
-            padding: 12px 16px;
-            border-radius: 6px;
-            margin-top: 15px;
-            font-size: 13px;
-            color: #ffb366;
-        }
-
         /* Info Grid Section */
         .info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
             margin-bottom: 40px;
         }
@@ -196,6 +117,11 @@
             border: 1px solid var(--border-color);
             padding: 24px;
             border-radius: 8px;
+            transition: border-color 0.3s;
+        }
+
+        .info-card:hover {
+            border-color: rgba(255, 255, 255, 0.1);
         }
 
         .info-card i {
@@ -226,8 +152,8 @@
         }
 
         .doc-section h2 {
-            font-size: 20px;
-            margin-bottom: 15px;
+            font-size: 22px;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -238,7 +164,7 @@
         }
 
         .endpoint-box {
-            background: #050508;
+            background: rgba(0, 0, 0, 0.3);
             border-left: 3px solid var(--accent-blue);
             font-family: 'Fira Code', monospace;
             padding: 14px;
@@ -247,9 +173,6 @@
             word-break: break-all;
             margin-bottom: 30px;
             color: #d1d1d6;
-            border-top: 1px solid var(--border-color);
-            border-right: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
         }
 
         /* Code Tabs Logic Layout */
@@ -303,6 +226,7 @@
             color: #e1e1e6;
         }
 
+        /* Footer */
         footer {
             text-align: center;
             margin-top: 60px;
@@ -320,167 +244,107 @@
 </head>
 <body>
 
-    <div class="sidebar">
-        <div class="logo-area">
-            <i class="fa-solid fa-wind"></i> <span>WIND</span> DEVS
-        </div>
+    <div class="container">
         
-        <div class="menu-title">Kategoriler</div>
-        <div class="nav-menu">
-            <button class="nav-item active" onclick="switchCategory(event, 'cat-wmail')">
-                <i class="fa-solid fa-envelope"></i> Wmail SSO
-            </button>
-            <button class="nav-item" onclick="switchCategory(event, 'cat-wsugget')">
-                <i class="fa-solid fa-cloud"></i> Wsugget Drive
-            </button>
+        <header>
+            <div class="logo-area">
+                <i class="fa-solid <i fa-solid fa-wind"></i> <span>WIND</span> DEVELOPERS
+            </div>
+            <h1>Wmail SSO Integration Hub</h1>
+            <p>Deploy secure, seamless, and centralized OAuth-style identity verification layers directly into your software cluster network pipelines.</p>
+        </header>
+
+        <div class="cta-zone">
+            <a href="https://authwmail.vercel.app/developers" class="btn-get-key">
+                <i class="fa-solid fa-key"></i> GET PRODUCTION API KEY NOW
+            </a>
         </div>
-    </div>
 
-    <div class="main-content">
-        
-        <div id="cat-wmail" class="doc-category active">
-            <header>
-                <h1>Wmail SSO Integration Hub</h1>
-                <p>Deploy secure, seamless, and centralized OAuth-style identity verification layers directly into your applications.</p>
-            </header>
+        <div class="info-grid">
+            <div class="info-card">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h3>Secure Handshake</h3>
+                <p>Fully isolated authorization flow keeping credentials secured in the central core node.</p>
+            </div>
+            <div class="info-card">
+                <i class="fa-solid fa-bolt"></i>
+                <h3>Instant Callback</h3>
+                <p>Deep-linking system routes verified users back to your stack within operational sub-milliseconds.</p>
+            </div>
+            <div class="info-card">
+                <i class="fa-solid fa-network-wired"></i>
+                <h3>Unified Token</h3>
+                <p>Manage cross-project credentials from a unified, single matrix panel view.</p>
+            </div>
+        </div>
 
-            <div class="cta-zone">
-                <a href="https://authwmail.vercel.app/developers" class="btn-get-key">
-                    <i class="fa-solid fa-key"></i> GENERATE WMAIL API KEY
-                </a>
+        <div class="doc-section">
+            <h2><i class="fa-solid fa-book"></i> Entegrasyon & Endpoint Spec</h2>
+            <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 15px;">To trigger the login sequence handshake, route users to our central identity gateway using your secure credentials:</p>
+            
+            <div class="endpoint-box">
+                GET https://authwmail.vercel.app/?redirect=<span style="color:var(--accent-green);">YOUR_CALLBACK_URL</span>&apikey=<span style="color:var(--accent-green);">YOUR_WMAIL_KEY</span>
             </div>
 
-            <div class="info-grid">
-                <div class="info-card">
-                    <i class="fa-solid fa-shield-halved"></i>
-                    <h3>Secure Handshake</h3>
-                    <p>Fully isolated authorization flow keeping credentials secured in the central core node.</p>
-                </div>
-                <div class="info-card">
-                    <i class="fa-solid fa-bolt"></i>
-                    <h3>Instant Callback</h3>
-                    <p>Deep-linking system routes verified users back to your stack within operational sub-milliseconds.</p>
-                </div>
-            </div>
-
-            <div class="doc-section">
-                <h2><i class="fa-solid fa-book"></i> Entegrasyon & Endpoint Spec</h2>
-                <div class="endpoint-box">
-                    GET https://authwmail.vercel.app/?redirect=<span style="color:var(--accent-green);">YOUR_CALLBACK_URL</span>&apikey=<span style="color:var(--accent-green);">YOUR_WMAIL_KEY</span>
+            <h2><i class="fa-solid fa-code"></i> Implementation Snippets</h2>
+            
+            <div class="tabs-container">
+                <div class="tabs-header">
+                    <button class="tab-btn active" onclick="switchTab(event, 'js-frontend')">JavaScript (Frontend)</button>
+                    <button class="tab-btn" onclick="switchTab(event, 'py-flask')">Python (Flask)</button>
                 </div>
 
-                <h2><i class="fa-solid fa-code"></i> Implementation Snippets</h2>
-                <div class="tabs-container">
-                    <div class="tabs-header">
-                        <button class="tab-btn active" onclick="switchTab(event, 'wmail-js')">JavaScript</button>
-                        <button class="tab-btn" onclick="switchTab(event, 'wmail-py')">Python (Flask)</button>
-                    </div>
-
-                    <div id="wmail-js" class="tab-content active">
-                        <pre><code>// URL parameter validation snippet
+                <div id="js-frontend" class="tab-content active">
+                    <pre><code>// Deploy this logic inside your landing callback page initialization
 window.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('status') === 'success') {
+    const status = urlParams.get('status');
+    
+    if (status === 'success') {
+        // Extract synchronized core verification metrics
         const username = urlParams.get('username');
         const email = urlParams.get('email');
-        console.log(`Verified entity: ${username} (${email})`);
+        const token = urlParams.get('token'); // Validated API Key Matrix
+
+        console.log(`Identity verified successfully: ${username} (${email})`);
+        
+        // Execute session sync layer
+        localStorage.setItem('wmail_session', JSON.stringify({ username, email, token }));
+        
+        // Sanitize browser URL string for high security
+        window.history.replaceState({}, document.title, window.location.pathname);
+        
+        alert(`Welcome authorized entity: ${username}! Cluster synchronized.`);
     }
 });</code></pre>
-                    </div>
+                </div>
 
-                    <div id="wmail-py" class="tab-content">
-                        <pre><code>@app.route('/callback')
-def callback():
+                <div id="py-flask" class="tab-content">
+                    <pre><code>from flask import Flask, request, jsonify
+
+app = Flask(__name__)
+
+@app.route('/callback', methods=['GET'])
+def wmail_callback_handler():
     status = request.args.get('status')
-    if status == 'success':
-        return jsonify({"user": request.args.get('username')})
-    return "Handshake Rejected", 401</code></pre>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="cat-wsugget" class="doc-category">
-            <header>
-                <h1>Wsugget Cloud Storage Hub</h1>
-                <p>Projenize entegre edebileceğiniz, GitHub altyapılı ve hesap başına 5GB kota sunan bulut depolama sistemi.</p>
-            </header>
-
-            <div class="cta-zone">
-                <button class="btn-get-key" onclick="alert('Wsugget Key Matrix oluşturuluyor...')">
-                    <i class="fa-solid fa-cloud-arrow-up"></i> INITIALIZE WSUGGET STORAGE KEY
-                </button>
-                <div class="limit-notice">
-                    <i class="fa-solid fa-triangle-exclamation"></i>
-                    <strong>Güvenlik Sınırı:</strong> Geliştirici hesabı başına sadece <strong>1 adet</strong> Wsugget API Anahtarı üretilebilir.
-                </div>
-            </div>
-
-            <div class="info-grid">
-                <div class="info-card">
-                    <i class="fa-solid fa-database"></i>
-                    <h3>5 GB Ücretsiz Alan</h3>
-                    <p>Uygulamalarınızdaki kullanıcı dosyalarını, resimleri ve konfigürasyonları saklamak için geniş depolama.</p>
-                </div>
-                <div class="info-card">
-                    <i class="fa-solid fa-folder-tree"></i>
-                    <h3>İzole Repo Yapısı</h3>
-                    <p>Verileriniz GitHub reposu üzerinde <code>users/örnehmet</code> hiyerarşisiyle tamamen dinamik ve güvenli saklanır.</p>
-                </div>
-                <div class="info-card">
-                    <i class="fa-solid fa-box-open"></i>
-                    <h3>Kolay Entegrasyon</h3>
-                    <p>Sadece tek bir API token kullanarak CRUD (Yükleme/Okuma/Silme) işlemlerini saniyeler içinde tetikleyin.</p>
-                </div>
-            </div>
-
-            <div class="doc-section">
-                <h2><i class="fa-solid fa-book"></i> REST API Endpoint Specification</h2>
-                <div class="endpoint-box">
-                    POST https://api.wsugget.vercel.app/storage/upload<br>
-                    Headers: Authorization: Bearer <span style="color:var(--accent-green);">YOUR_WSUGGET_KEY</span>
-                </div>
-
-                <h2><i class="fa-solid fa-code"></i> Implementation Snippets</h2>
-                <div class="tabs-container">
-                    <div class="tabs-header">
-                        <button class="tab-btn active" onclick="switchTab(event, 'sugget-js')">JavaScript (Upload)</button>
-                        <button class="tab-btn" onclick="switchTab(event, 'sugget-py')">Python (Requests)</button>
-                    </div>
-
-                    <div id="sugget-js" class="tab-content active">
-                        <pre><code>// Wsugget Cloud Storage File Upload Logic
-async function uploadToWsugget(fileObject) {
-    const formData = new FormData();
-    formData.append('file', fileObject);
-
-    const response = await fetch('https://api.wsugget.vercel.app/storage/upload', {
-        method: 'POST',
-        headers: {
-            'Authorization': 'Bearer YOUR_WSUGGET_KEY'
-        },
-        body: formData
-    });
-
-    const result = await response.json();
-    if(result.success) {
-        console.log(`Cloud URI Matrix Generated: ${result.fileUrl}`); // users/username/filename
-    }
-}</code></pre>
-                    </div>
-
-                    <div id="sugget-py" class="tab-content">
-                        <pre><code>import requests
-
-def upload_file_matrix(file_path, api_key):
-    url = "https://api.wsugget.vercel.app/storage/upload"
-    headers = {"Authorization": f"Bearer {api_key}"}
-    files = {'file': open(file_path, 'rb')}
     
-    response = requests.post(url, headers=headers, files=files)
-    if response.status_code == 200:
-        print("Storage target path initialized:", response.json().get("fileUrl"))</code></pre>
-                    </div>
+    if status == 'success':
+        username = request.args.get('username')
+        email = request.args.get('email')
+        token = request.args.get('token')
+        
+        # Identity Verified - Inject your secure cookie/JWT session logic here
+        return jsonify({
+            "authenticated": True,
+            "user": username,
+            "email": email,
+            "token_verified": token
+        }), 200
+    
+    return jsonify({"error": "Unauthorized handshake matrix rejected"}), 401
+
+if __name__ == '__main__':
+    app.run(port=5000)</code></pre>
                 </div>
             </div>
         </div>
@@ -492,46 +356,13 @@ def upload_file_matrix(file_path, api_key):
     </div>
 
     <script>
-        // Sol menüdeki kategoriler arası geçiş mantığı
-        function switchCategory(evt, categoryId) {
-            const categories = document.getElementsByClassName('doc-category');
-            for (let i = 0; i < categories.length; i++) {
-                categories[i].classList.remove('active');
-            }
-
-            const menuItems = document.getElementsByClassName('nav-item');
-            for (let i = 0; i < menuItems.length; i++) {
-                menuItems[i].classList.remove('active');
-            }
-
-            document.getElementById(categoryId).classList.add('active');
-            evt.currentTarget.classList.add('active');
-
-            // Kategori değiştiğinde alt sekmeleri sıfırla (Görüntü bozulmasın diye)
-            const activeCategory = document.getElementById(categoryId);
-            const firstTabBtn = activeCategory.querySelector('.tab-btn');
-            const firstTabContent = activeCategory.querySelector('.tab-content');
-            
-            if(firstTabBtn && firstTabContent) {
-                const siblingBtns = activeCategory.querySelectorAll('.tab-btn');
-                const siblingContents = activeCategory.querySelectorAll('.tab-content');
-                siblingBtns.forEach(b => b.classList.remove('active'));
-                siblingContents.forEach(c => c.classList.remove('active'));
-                
-                firstTabBtn.classList.add('active');
-                firstTabContent.classList.add('active');
-            }
-        }
-
-        // Sekmeler (Code Snippets) arası geçiş mantığı
         function switchTab(evt, tabId) {
-            const container = evt.currentTarget.closest('.doc-section');
-            const contents = container.getElementsByClassName('tab-content');
+            const contents = document.getElementsByClassName('tab-content');
             for (let i = 0; i < contents.length; i++) {
                 contents[i].classList.remove('active');
             }
 
-            const buttons = container.getElementsByClassName('tab-btn');
+            const buttons = document.getElementsByClassName('tab-btn');
             for (let i = 0; i < buttons.length; i++) {
                 buttons[i].classList.remove('active');
             }
